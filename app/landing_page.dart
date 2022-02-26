@@ -7,7 +7,7 @@ import 'package:time_tracker_flutter_course/services/auth.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key, required this.auth}) : super(key: key);
-  final AuthBase auth; // =>  /services/auth.dart
+  final AuthBase auth; // =>   /services/auth.dart
 
   @override
   _LandingPageState createState() => _LandingPageState();
@@ -24,7 +24,8 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   void _updateUser(User? user) {
-    setState(() {    // the setstate methode rebuild the widget bulder (reload)
+    setState(() {
+      // the setstate methode rebuild the widget bulder (reload)
       _user = user;
     });
   }
@@ -33,7 +34,8 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     if (_user == null) {
       return SignInPage(
-        onSignIn: _updateUser, //onSignIn: (user) => _updateUser(user),   //run _updateuser using onsignin(user)
+        onSignIn:
+            _updateUser, //onSignIn: (user) => _updateUser(user),   //run _updateuser using onsignin(user)
         auth: widget.auth,
       );
     }
